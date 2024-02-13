@@ -1,0 +1,23 @@
+
+<div>
+    <h1>Listado de Productos</h1>
+</div>
+
+<article id="list-products">
+  {{#each listadeproductos}}
+  <div class="cards-container">
+    <div class="card" style="width: 16rem;">
+      <img src="{{thumbnail}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{title}}</h5>
+        <p class="card-text">{{this.description}}</p>
+        <button type="submit" data-product-id="{{this._id}}" class="btn btn-primary add-to-cart-button">Añadir al Carrito</button>
+      </div>
+    </div>
+  </div>
+  {{/each}}
+</article>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<script src="js/cart.js" defer></script>
