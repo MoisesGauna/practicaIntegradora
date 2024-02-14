@@ -11,7 +11,7 @@ export default class MessagesManager {
   
     createMessage = async (message) => {
       if (message.user.trim() === '' || message.message.trim() === '') {
-          // Evitar crear mensajes vacíos
+         
           return null;
       }
   
