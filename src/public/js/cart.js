@@ -17,29 +17,27 @@ document.querySelectorAll('.add-to-cart-button').forEach(button => {
         const data = await response.json();
   
         if (data.success) {
-          // Mostrar un SweetAlert de éxito
+       
           Swal.fire({
             position: "bottom-end",
             width: 200,
             Height: 200,
             background: "#0b5ed7",
             color:  "#fff",
-            // icon: "success",
+      
             text: "Producto agregado",
             showConfirmButton: false,
             timer: 1000
           });
         
 
-        //   Swal.fire('¡Éxito!', data.message, 'success');
 
-        } else {
-          // Mostrar un SweetAlert de error
-          Swal.fire('Error', data.message, 'error');
+
+        } else {          Swal.fire('Error', data.message, 'error');
         }
       } catch (error) {
         console.error('Error al procesar la solicitud:', error);
-        // Mostrar un SweetAlert de error en caso de error en la solicitud
+
         Swal.fire('Error', 'Error al procesar la solicitud', 'error');
       }
     });
