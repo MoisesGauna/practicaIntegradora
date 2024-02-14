@@ -17,7 +17,7 @@ document.querySelectorAll('.delete-to-cart-button').forEach(button => {
         const data = await response.json();
   
         if (data.success) {
-          // Mostrar un SweetAlert de éxito
+
           Swal.fire({
             position: "top-end",
             icon: "success",
@@ -28,12 +28,12 @@ document.querySelectorAll('.delete-to-cart-button').forEach(button => {
         
 
         } else {
-          // Mostrar un SweetAlert de error
+
           Swal.fire('Error', data.message, 'error');
         }
       } catch (error) {
         console.error('Error al procesar la solicitud:', error);
-        // Mostrar un SweetAlert de error en caso de error en la solicitud
+
         Swal.fire('Error', 'Error al procesar la solicitud', 'error');
       }
     });
