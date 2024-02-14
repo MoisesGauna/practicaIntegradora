@@ -49,15 +49,6 @@ updateProduct = async (id, product) => {
 }
 
     
-    //  updateProduct=async(id,obj)=>{
-    //      console.log(obj)
-    //     const productUpdated=await productsModel.updateOne({_id:id},obj)
-    //     return productUpdated
-    //   }
-
-
-      //DELETE
-      
       deleteProduct = async (id) => {
         try {
             return await productsModel.findByIdAndDelete(id);
