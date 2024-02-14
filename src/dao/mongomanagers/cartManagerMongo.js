@@ -72,11 +72,11 @@ class CartManager {
         try {
           const cart = await cartModel.findById(cartId);
     
-          // Encontrar el índice del producto en el carrito
+          
           const productIndex = cart.products.findIndex((product) => product._id.toString() === productId);
     
           if (productIndex !== -1) {
-            // Eliminar el producto del carrito
+            
             cart.products.splice(productIndex, 1);
             await cart.save();
             return await cartModel.findById(cartId);
