@@ -34,7 +34,6 @@ router.delete('/delete-to-cart', async (req, res) => {
 
         const removeCartProduct = await cmanager.removeProductFromCart("65c28522c1483aaada1fb25c", productId);
 
-        // En lugar de enviar un script con alert y redirección, puedes enviar un mensaje JSON de éxito
         res.json({ success: true, message: 'Producto eliminado del carrito' });
       } catch (error) {
         console.error('Error al agregar producto al carrito:', error);
@@ -54,7 +53,6 @@ router.post('/add-to-cart', async (req, res) => {
         const addedProduct = await cmanager.addProductInCart("65c28522c1483aaada1fb25c", productDetails, id);
       }
   
-      // En lugar de enviar un script con alert y redirección, puedes enviar un mensaje JSON de éxito
       res.json({ success: true, message: 'Producto agregado al carrito' });
     } catch (error) {
       console.error('Error al agregar producto al carrito:', error);
@@ -64,36 +62,6 @@ router.post('/add-to-cart', async (req, res) => {
   
 
 
-// router.post('/add-to-cart', async (req, res) => {
-//     try {
-//         const { productId } = req.body;
-
-
-//         const cart = await cmanager.getCartById("65c28522c1483aaada1fb25c")
-
-//         if (productId) {
-//             const id = productId
-//             const productDetails = await pmanager.getProductById(productId);
-//             const addedProduct = await cmanager.addProductInCart("65c28522c1483aaada1fb25c", productDetails, id);
-//         }
-
-
-
-//         res.send(`
-//         <script>
-//         setTimeout(function() {
-//           alert('Producto agregado');
-//         }, 10);
-//         setTimeout(function() {
-//           window.location.href = '/';
-//         }, 50);
-//       </script>
-//         `)
-//     } catch (error) {
-//         console.error('Error al agregar producto al carrito:', error);
-//         res.status(500).json({ message: 'Error al agregar producto al carrito' });
-//     }
-// });
 
 
 router.get("/chat", (req, res) => {
