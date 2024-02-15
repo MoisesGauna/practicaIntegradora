@@ -11,7 +11,7 @@ let usuario=null
 
 if(!usuario){
     Swal.fire({
-        title:"Welcome to my English Class",
+        title:"Bienvenido a nuestro chatbox",
         text:"Ingresa tu usuario",
         input:"text",
         inputValidator:(value)=>{
